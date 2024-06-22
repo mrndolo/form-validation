@@ -67,3 +67,12 @@ function validateMessage(){
     messageError.innerHTML = '<img src="./images/check-mark.png"></img>';
     return true;
 }
+
+function validateForm(){
+    if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
+        submitError.style.display = 'block';
+        submitError.innerHTML = 'Please fix error(s) to submit';
+        setTimeout(function(){submitError.style.display = 'none';}, 3000);
+        return false;
+    }
+}
